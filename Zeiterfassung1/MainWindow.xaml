@@ -64,8 +64,9 @@
             </Button>
         </WrapPanel>
         <StackPanel Grid.Row="1">
+            <Label Name="lblHoursSum" />
             <WrapPanel>
-                <Label Name="lblHoursSum" />
+                <Label>Filter data</Label>
                 <DatePicker Name="datePickerFilterStartDate" />
                 <DatePicker Name="datePickerFilterEndDate" />
                 <Button Name="btnFilter" Click="btnFilter_Click">Filter</Button>
@@ -87,6 +88,15 @@
                             <DataTemplate>
                                 <StackPanel>
                                     <Button Name="btnEdit" Click="btnEdit_Click">Edit</Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Button Name="btnDelete" Click="btnDelete_Click">Delete</Button>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

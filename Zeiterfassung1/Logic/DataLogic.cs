@@ -77,6 +77,12 @@ namespace Zeiterfassung1.Logic
             return emplact;
         }
 
+        public void DeleteEmployeeActivity(EmployeeActivity emplact)
+        {
+            ZeiterfassungContext.Remove(emplact);
+            ZeiterfassungContext.SaveChanges();
+        }
+
         public Employee GetEmployeeFromUsername(string username)
         {
             var employee = ZeiterfassungContext.Employees

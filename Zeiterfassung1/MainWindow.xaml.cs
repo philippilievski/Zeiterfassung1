@@ -71,5 +71,11 @@ namespace Zeiterfassung1
         {
             dgZeiterfassung.ItemsSource = dataLogic.GetEmployeeActivitiesBetweenDates(datePickerFilterStartDate.SelectedDate ?? DateTime.Now, datePickerFilterEndDate.SelectedDate ?? DateTime.Now);
         }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            dataLogic.DeleteEmployeeActivity((EmployeeActivity)dgZeiterfassung.SelectedItem);
+            dgZeiterfassung.ItemsSource = dataLogic.GetEmployeeActivities();
+        }
     }
 }
